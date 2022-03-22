@@ -1,8 +1,9 @@
- package dev.bulean.notbored
+ package dev.bulean.notbored.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import dev.bulean.notbored.activities.ActivitiesActivity
 import dev.bulean.notbored.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnStart.setOnClickListener {
             val participants = binding.etParticipants.text.toString()
             if (participants.isNotEmpty() && participants.toInt() >= 1) {
-                startActivity(Intent(this, ActivitiesActivity::class.java))
+                val intent = Intent(this, ActivitiesActivity::class.java)
+                intent.putExtra("participants", participants.toInt())
+                startActivity(intent)
             }
         }
 

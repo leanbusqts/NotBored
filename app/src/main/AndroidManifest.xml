@@ -12,13 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NotBored">
         <activity
-            android:name=".ActivitiesActivity"
+            android:name=".hint.HintActivity"
             android:exported="false" />
         <activity
-            android:name=".TermsConditionsActivity"
+            android:name=".activities.ActivitiesActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".main.TermsConditionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
