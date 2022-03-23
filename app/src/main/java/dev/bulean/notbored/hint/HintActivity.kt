@@ -17,6 +17,11 @@ class HintActivity : AppCompatActivity() {
         binding = ActivityHintBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val t = intent.getStringExtra("type") ?: ""
+        val p = intent.getIntExtra("participants", 0)
+
+        viewModel.getActivityByParticipantsAndType(p, t)
+
         viewModel.participantsValue.observe(this, Observer {
             binding.participantsValue.text = it.toString()
         })
@@ -30,7 +35,7 @@ class HintActivity : AppCompatActivity() {
         })
 
         binding.randomButton.setOnClickListener {
-            viewModel.getActivity()
+            viewModel.getActivityByParticipantsAndType(p, t)
         }
         viewModel.progressBar.observe(this, Observer {
             binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE

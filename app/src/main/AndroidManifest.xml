@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NotBored">
         <activity
+            android:name=".activities.DescriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".hint.HintActivity"
             android:exported="false" />
         <activity

@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 private const val BASE_URL = "https://www.boredapi.com/api/"
 
-private val retrofit = Retrofit.Builder()
+val retrofit: Retrofit = Retrofit.Builder()
                             .addConverterFactory(GsonConverterFactory.create())
                             .baseUrl(BASE_URL)
                             .build()
@@ -19,7 +19,16 @@ interface ActivitiesApiService {
     suspend fun getActivityRandom() : Response<ActivityItem>
 
     @GET("activity?")
-    suspend fun getActivity(@Query("type") type: String
+    suspend fun getActivityByType(@Query("type") type: String
+    ) : Response<ActivityItem>
+
+    @GET("activity?")
+    suspend fun getActivityByParticipants(@Query("participants") participants: Int
+    ) : Response<ActivityItem>
+
+    @GET("activity?")
+    suspend fun getActivityByParticipantsAndType(@Query("participants") participants: Int,
+                                                 @Query("type") type: String
     ) : Response<ActivityItem>
 
 }
@@ -29,4 +38,3 @@ object ActivitiesApi {
         retrofit.create(ActivitiesApiService::class.java)
     }
 }
-

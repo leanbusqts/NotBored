@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HintViewModel : ViewModel(){
+class HintViewModel() : ViewModel(){
 
     private val _participantsValue = MutableLiveData<Int>()
     val participantsValue: LiveData<Int> get() = _participantsValue
@@ -27,15 +27,15 @@ class HintViewModel : ViewModel(){
     private val _progressBar = MutableLiveData<Boolean>()
     val progressBar: LiveData<Boolean> get() = _progressBar
 
-    init {
-        getActivity()
-    }
-
-    fun getActivity(){
+//    init {
+//        getActivity()
+//    }
+//    getActivityByParticipantsAndType
+    fun getActivityByParticipantsAndType(p: Int, t: String ){
         viewModelScope.launch {
             try {
                 _progressBar.value = true
-                val call = withContext(Dispatchers.IO) { ActivitiesApi.retrofitService.getActivity("recreational") }
+                val call = withContext(Dispatchers.IO) { ActivitiesApi.retrofitService.getActivityByParticipantsAndType(p, t) }
                 if (call.isSuccessful) {
                     _participantsValue.value = call.body()?.participants
                     _priceValue.value = call.body()?.price?.let { getPrice(it) }
