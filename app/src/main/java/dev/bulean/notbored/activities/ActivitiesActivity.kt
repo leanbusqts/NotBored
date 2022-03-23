@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import dev.bulean.notbored.data.DataSource
 import dev.bulean.notbored.databinding.ActivityActivitiesBinding
+import dev.bulean.notbored.hint.HintActivity
 
 class ActivitiesActivity : AppCompatActivity() {
 
@@ -19,7 +20,10 @@ class ActivitiesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         s = intent.getIntExtra("participants", 0)
-//        callService()
+
+        binding.randombtn.setOnClickListener {
+            startActivity(Intent(this, HintActivity::class.java))
+        }
 
         initRecyclerView()
     }

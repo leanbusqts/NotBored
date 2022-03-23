@@ -6,4 +6,137 @@
     android:layout_height="match_parent"
     tools:context=".hint.HintActivity">
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/sixteen_dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/randomButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/hintTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/thirty_two_dp"
+        android:layout_marginEnd="@dimen/thirty_two_dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        tools:text="Learn how to playe a new sport"
+        style="@style/TextAppearance.AppCompat.Display1"/>
+
+    <ImageView
+        android:id="@+id/participantsImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/thirty_two_dp"
+        android:src="@drawable/ic_person_24"
+        app:layout_constraintBottom_toBottomOf="@+id/participantsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/participantsTitle" />
+
+    <TextView
+        android:id="@+id/participantsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sixteen_dp"
+        android:text="@string/participants"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/priceTitle"
+        app:layout_constraintStart_toEndOf="@+id/participantsImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+    <TextView
+        android:id="@+id/participantsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/thirty_two_dp"
+        app:layout_constraintBottom_toBottomOf="@+id/participantsTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/participantsTitle"
+        tools:text="2"
+        style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+    <ImageView
+        android:id="@+id/priceImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/thirty_two_dp"
+        android:src="@drawable/ic_money_24"
+        app:layout_constraintBottom_toBottomOf="@+id/priceTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/priceTitle" />
+
+    <TextView
+        android:id="@+id/priceTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/thirty_two_dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/price"
+        app:layout_constraintEnd_toStartOf="@+id/priceValue"
+        app:layout_constraintStart_toEndOf="@+id/priceImage"
+        app:layout_constraintTop_toBottomOf="@+id/participantsTitle"
+        style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+    <TextView
+        android:id="@+id/priceValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/thirty_two_dp"
+        app:layout_constraintBottom_toBottomOf="@+id/priceTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/priceTitle"
+        tools:text="Medium"
+        style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+    <ImageView
+        android:id="@+id/typeImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/thirty_two_dp"
+        android:src="@drawable/ic_list_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/typeTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/typeTitle" />
+
+    <TextView
+        android:id="@+id/typeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/thirty_two_dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/priceTitle"
+        app:layout_constraintStart_toEndOf="@+id/typeImage"
+        app:layout_constraintTop_toBottomOf="@+id/priceTitle"
+        tools:text="Relaxation"
+        style="@style/TextAppearance.MaterialComponents.Body1"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/randomButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/thirty_two_dp"
+        android:layout_marginStart="@dimen/sixteen_dp"
+        android:layout_marginEnd="@dimen/sixteen_dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="@string/buttonTryAnother"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Widget.AppCompat.ActionButton"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
