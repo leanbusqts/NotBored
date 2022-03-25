@@ -7,10 +7,11 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import dev.bulean.notbored.R
 import dev.bulean.notbored.databinding.ActivityHintBinding
+import dev.bulean.notbored.main.SharedViewModel
 
 class HintActivity : AppCompatActivity() {
 
-    private val viewModel by viewModels<HintViewModel>()
+    private val viewModel by viewModels<SharedViewModel>()
     private lateinit var binding: ActivityHintBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

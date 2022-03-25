@@ -1,4 +1,4 @@
-package dev.bulean.notbored.hint
+package dev.bulean.notbored.main
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,12 +6,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.bulean.notbored.data.ActivitiesApi
-import dev.bulean.notbored.data.DataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HintViewModel() : ViewModel(){
+class SharedViewModel() : ViewModel(){
 
     private val _participantsValue = MutableLiveData<Int>()
     val participantsValue: LiveData<Int> get() = _participantsValue
