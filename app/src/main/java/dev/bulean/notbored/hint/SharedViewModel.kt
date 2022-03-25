@@ -1,4 +1,4 @@
-package dev.bulean.notbored.main
+package dev.bulean.notbored.hint
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -24,10 +24,6 @@ class SharedViewModel() : ViewModel(){
     private val _progressBar = MutableLiveData<Boolean>()
     val progressBar: LiveData<Boolean> get() = _progressBar
 
-//    init {
-//        getActivity()
-//    }
-//    getActivityByParticipantsAndType
     fun getActivityByParticipantsAndType(p: Int, t: String){
         viewModelScope.launch {
             try {
@@ -47,7 +43,7 @@ class SharedViewModel() : ViewModel(){
         }
     }
 
-    fun getRandomActivity(){
+    fun getRandomActivity() {
         viewModelScope.launch {
             try {
                 _progressBar.value = true
@@ -74,12 +70,5 @@ class SharedViewModel() : ViewModel(){
             else -> "High"
         }
     }
-
-//    fun ranp() : Int {
-//        return (1..9).random()
-//    }
-//    fun rant() : String {
-//        return DataSource().loadData().random()
-//    }
 
 }

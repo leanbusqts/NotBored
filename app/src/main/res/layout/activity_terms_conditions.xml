@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:paddingBottom="@dimen/eight_dp"
-    tools:context=".main.TermsConditionsActivity">
+    tools:context=".activities.TermsConditionsActivity">
 
     <ImageButton
         android:id="@+id/ibExitTermsConditions"

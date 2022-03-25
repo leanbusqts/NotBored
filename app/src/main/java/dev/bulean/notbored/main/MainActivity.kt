@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import dev.bulean.notbored.R
 import dev.bulean.notbored.activities.ActivitiesActivity
+import dev.bulean.notbored.activities.TermsConditionsActivity
 import dev.bulean.notbored.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun errorService() {
+    private fun errorService() {
         Snackbar.make(binding.root, R.string.errorservice_by_participants, Snackbar.LENGTH_SHORT).show()
     }
 

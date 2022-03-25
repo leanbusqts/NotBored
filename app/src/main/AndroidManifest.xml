@@ -30,7 +30,7 @@
             android:name=".activities.ActivitiesActivity"
             android:exported="false" />
         <activity
-            android:name=".main.TermsConditionsActivity"
+            android:name=".activities.TermsConditionsActivity"
             android:exported="false" />
 
     </application>

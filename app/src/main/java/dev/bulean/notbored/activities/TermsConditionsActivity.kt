@@ -1,4 +1,4 @@
-package dev.bulean.notbored.main
+package dev.bulean.notbored.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

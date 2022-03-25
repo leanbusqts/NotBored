@@ -20,6 +20,7 @@ class ActivitiesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityActivitiesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = getString(R.string.activities)
         participants = intent.getIntExtra("participants", 0)
@@ -28,7 +29,6 @@ class ActivitiesActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-//        val data = filterList(participants, DataSource().loadData())
         val data = DataSource().loadData()
         adapter = ActivitiesAdapter(data) { activity ->
             val intent = Intent(this, HintActivity::class.java)
@@ -40,10 +40,6 @@ class ActivitiesActivity : AppCompatActivity() {
         binding.recycler.adapter = adapter
     }
 
-//    private fun filterList(filter: Int, list: List<TypesActivities>) : List<TypesActivities>{
-//        return list.filter { it.participants == filter }
-//    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_random, menu)
         return true
@@ -53,8 +49,8 @@ class ActivitiesActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.item_random -> {
                 val intent = Intent(this, HintActivity::class.java)
-                intent.putExtra("type", rant())
-                intent.putExtra("participants", ranp())
+                intent.putExtra("type", rankTypes())
+                intent.putExtra("participants", rankParticipants())
                 intent.putExtra("isRandom", true)
                 startActivity(intent)
                 return true
@@ -63,10 +59,10 @@ class ActivitiesActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun ranp() : Int {
+    private fun rankParticipants() : Int {
         return (1..9).random()
     }
-    fun rant() : String {
+    private fun rankTypes() : String {
         return DataSource().loadData().random()
     }
 

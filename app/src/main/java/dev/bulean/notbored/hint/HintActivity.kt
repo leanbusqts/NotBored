@@ -6,9 +6,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import dev.bulean.notbored.R
-import dev.bulean.notbored.data.DataSource
 import dev.bulean.notbored.databinding.ActivityHintBinding
-import dev.bulean.notbored.main.SharedViewModel
 
 class HintActivity : AppCompatActivity() {
 
@@ -23,16 +21,16 @@ class HintActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.activities)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val t = intent.getStringExtra("type") ?: ""
-        val p = intent.getIntExtra("participants", 0)
-        val r = intent.getBooleanExtra("isRandom", false)
+        val type = intent.getStringExtra("type") ?: ""
+        val participants = intent.getIntExtra("participants", 0)
+        val isRandom = intent.getBooleanExtra("isRandom", false)
 
 
-        binding.typeImage.visibility = if (r) View.VISIBLE else View.INVISIBLE
-        binding.typeTitle.visibility = if (r) View.VISIBLE else View.INVISIBLE
-        if (r) binding.typeTitle.text = t
+        binding.typeImage.visibility = if (isRandom) View.VISIBLE else View.INVISIBLE
+        binding.typeTitle.visibility = if (isRandom) View.VISIBLE else View.INVISIBLE
+        if (isRandom) binding.typeTitle.text = type
 
-        viewModel.getActivityByParticipantsAndType(p, t)
+        viewModel.getActivityByParticipantsAndType(participants, type)
 
         viewModel.participantsValue.observe(this, Observer {
             binding.participantsValue.text = it.toString()

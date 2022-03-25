@@ -15,7 +15,7 @@ val retrofit: Retrofit = Retrofit.Builder()
 
 interface ActivitiesApiService {
 
-    @GET("activity/")
+    @GET("activity/?")
     suspend fun getActivityRandom() : Response<ActivityItem>
 
     @GET("activity?")
