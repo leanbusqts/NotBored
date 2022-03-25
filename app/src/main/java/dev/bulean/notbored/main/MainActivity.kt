@@ -3,6 +3,7 @@ package dev.bulean.notbored.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import dev.bulean.notbored.R
 import dev.bulean.notbored.activities.ActivitiesActivity
@@ -18,13 +19,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnStart.setOnClickListener {
-            val participants: String? = binding.etParticipants.text.toString()
+            val participants: String = binding.etParticipants.text.toString()
             when {
-                participants?.toInt()!! > 8 -> errorService()
-                participants?.toInt() >= 1 -> navigateToActivities(participants.toInt())
-                participants?.toInt() == 0 -> equalZero()
-                participants.isNullOrEmpty() -> equalZero()
-
+                !binding.checkTermsConditions.isChecked -> checkTermsConditions()
+                participants.isEmpty() -> equalZero()
+                participants.toInt() == 0 -> equalZero()
+                participants.toInt() > 8 -> errorService()
+                participants.toInt() >= 1 -> navigateToActivities(participants.toInt())
             }
         }
 
@@ -33,16 +34,23 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
     private fun navigateToActivities(participants: Int) {
         val intent = Intent(this, ActivitiesActivity::class.java)
         intent.putExtra("participants", participants)
         startActivity(intent)
     }
+
     fun errorService() {
         Snackbar.make(binding.root, R.string.errorservice_by_participants, Snackbar.LENGTH_SHORT).show()
     }
+
     private fun equalZero() {
-        Snackbar.make(binding.root, "please put a number", Snackbar.LENGTH_SHORT).show()
+        Snackbar.make(binding.root, getString(R.string.please_put_number), Snackbar.LENGTH_SHORT).show()
+    }
+
+    private fun checkTermsConditions() {
+        Snackbar.make(binding.root, getString(R.string.accept_terms_conditions), Snackbar.LENGTH_SHORT).show()
     }
 
 }
