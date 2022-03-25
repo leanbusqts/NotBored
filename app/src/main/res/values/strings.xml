@@ -10,5 +10,7 @@
     <string name="errorservice_by_participants">No activity found with the specified parameters</string>
     <string name="random">random</string>
     <string name="activities">Activities</string>
+    <string name="please_put_number">please put a number</string>
+    <string name="accept_terms_conditions">you must accept terms and conditions</string>
 
 </resources>
