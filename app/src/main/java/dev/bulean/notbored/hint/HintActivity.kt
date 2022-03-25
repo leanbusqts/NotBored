@@ -6,6 +6,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import dev.bulean.notbored.R
+import dev.bulean.notbored.data.DataSource
 import dev.bulean.notbored.databinding.ActivityHintBinding
 import dev.bulean.notbored.main.SharedViewModel
 
@@ -26,6 +27,7 @@ class HintActivity : AppCompatActivity() {
         val p = intent.getIntExtra("participants", 0)
         val r = intent.getBooleanExtra("isRandom", false)
 
+
         binding.typeImage.visibility = if (r) View.VISIBLE else View.INVISIBLE
         binding.typeTitle.visibility = if (r) View.VISIBLE else View.INVISIBLE
         if (r) binding.typeTitle.text = t
@@ -45,7 +47,7 @@ class HintActivity : AppCompatActivity() {
         })
 
         binding.randomButton.setOnClickListener {
-            viewModel.getActivityByParticipantsAndType(p, t)
+            viewModel.getRandomActivity()
         }
         viewModel.progressBar.observe(this, Observer {
             binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE

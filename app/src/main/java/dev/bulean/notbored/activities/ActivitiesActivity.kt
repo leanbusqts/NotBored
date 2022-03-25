@@ -53,8 +53,8 @@ class ActivitiesActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.item_random -> {
                 val intent = Intent(this, HintActivity::class.java)
-//                intent.putExtra("type", rant())
-//                intent.putExtra("participants", ranp())
+                intent.putExtra("type", rant())
+                intent.putExtra("participants", ranp())
                 intent.putExtra("isRandom", true)
                 startActivity(intent)
                 return true
@@ -62,13 +62,13 @@ class ActivitiesActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-//
-//    fun ranp() : Int {
-//        return (1..9).random()
-//    }
-//    fun rant() : String {
-//        return DataSource().loadData().random()
-//    }
+
+    fun ranp() : Int {
+        return (1..9).random()
+    }
+    fun rant() : String {
+        return DataSource().loadData().random()
+    }
 
 }
 

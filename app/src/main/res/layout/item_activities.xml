@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
-    android:foreground="?android:attr/selectableItemBackground">
+    android:foreground="?android:attr/selectableItemBackground"
+    android:background="@color/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,7 +15,8 @@
         android:paddingTop="@dimen/eight_dp"
         android:paddingBottom="@dimen/eight_dp"
         android:paddingStart="@dimen/sixteen_dp"
-        android:paddingEnd="@dimen/sixteen_dp">
+        android:paddingEnd="@dimen/sixteen_dp"
+        android:background="@color/background">
 
         <TextView
             android:id="@+id/tvActivityTitle"
