@@ -11,18 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NotBored">
-        <activity
-            android:name=".activities.DescriptionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".hint.HintActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.ActivitiesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".main.TermsConditionsActivity"
-            android:exported="false" />
+
         <activity
             android:name=".main.MainActivity"
             android:exported="true">
@@ -32,6 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".hint.HintActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.ActivitiesActivity"/>
+        <activity
+            android:name=".activities.ActivitiesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.TermsConditionsActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

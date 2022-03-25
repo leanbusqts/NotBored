@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.bulean.notbored.data.ActivitiesApi
+import dev.bulean.notbored.data.DataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -21,9 +22,6 @@ class HintViewModel() : ViewModel(){
     private val _activityHint = MutableLiveData<String>()
     val activityHint: LiveData<String> get() = _activityHint
 
-    private val _isRandom = MutableLiveData<Boolean>()
-    val isRandom: LiveData<Boolean> get() = _isRandom
-
     private val _progressBar = MutableLiveData<Boolean>()
     val progressBar: LiveData<Boolean> get() = _progressBar
 
@@ -31,7 +29,7 @@ class HintViewModel() : ViewModel(){
 //        getActivity()
 //    }
 //    getActivityByParticipantsAndType
-    fun getActivityByParticipantsAndType(p: Int, t: String ){
+    fun getActivityByParticipantsAndType(p: Int, t: String){
         viewModelScope.launch {
             try {
                 _progressBar.value = true
@@ -77,4 +75,12 @@ class HintViewModel() : ViewModel(){
             else -> "High"
         }
     }
+
+//    fun ranp() : Int {
+//        return (1..9).random()
+//    }
+//    fun rant() : String {
+//        return DataSource().loadData().random()
+//    }
+
 }

@@ -16,6 +16,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:background="?attr/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/hintTitle"
         android:layout_width="0dp"
@@ -27,7 +37,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintVertical_bias="0.15"
         tools:text="Learn how to playe a new sport"
         style="@style/TextAppearance.AppCompat.Display1"/>
@@ -51,7 +61,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/priceTitle"
         app:layout_constraintStart_toEndOf="@+id/participantsImage"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintVertical_bias="0.5"
         style="@style/TextAppearance.MaterialComponents.Body1"/>
 
@@ -106,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/thirty_two_dp"
         android:src="@drawable/ic_list_24"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/typeTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/typeTitle" />
@@ -117,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/thirty_two_dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/priceTitle"
         app:layout_constraintStart_toEndOf="@+id/typeImage"
         app:layout_constraintTop_toBottomOf="@+id/priceTitle"

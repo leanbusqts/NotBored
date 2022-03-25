@@ -43,7 +43,7 @@
         android:id="@+id/btnStart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="@dimen/eighty_dp"
         android:text="@string/start"
         android:textColor="@color/white"
         android:background="@android:color/holo_blue_dark"
